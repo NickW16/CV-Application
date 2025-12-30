@@ -21,9 +21,6 @@ function App() {
         
          </div>
       <CVform />
-         <div id="cv-section">
-            <h2>Curriculum:</h2>
-         </div>
       </div>
    </>
   )
