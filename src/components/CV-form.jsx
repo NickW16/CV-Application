@@ -10,7 +10,10 @@ export default function CVform() {
          address: 'San Francisco, CA 12345',
          languages: ['English', 'Mandarin', 'Spanish'],
          skills: ['React', 'TypeScript', 'Node.js', 'Python', 'AWS', 'Docker', 'GraphQL'],
+         education: 'Harvard University.',
+         experience: 'Worked at Tech Innovations Inc. leading a team of 8 developers in building scalable apps.',
          summary: 'Full-stack developer specialized in React apps.',
+
    });
 
    // handle input changes:
@@ -125,12 +128,36 @@ export default function CVform() {
                   type="text"
                   className="form-input"
                   name="skills"
-                  value={formData.skills.join('.')}
+                  value={formData.skills.join(',')}
                   onChange={(e) => handleArrayChange(e, 'skills')}
                />
             <small className="input-hint">Separate skills with commas</small>
             </div>
 
+            <h2>Education</h2>
+            <div className="input-section">
+               <label htmlFor="education"></label>
+               <textarea
+                  type="text"
+                  className="form-input"
+                  name="education"
+                  value={formData.education}   
+                  onChange={handleChange}
+                  rows="5"
+               />
+            </div>
+            <h2>Experience</h2>
+            <div className="input-section">
+               <label htmlFor="experience">Experience</label>
+               <textarea
+                  type="text"
+                  className="form-input"
+                  name="experience"
+                  value={formData.experience}   
+                  onChange={(e) => handleArrayChange(e, 'experience')}
+                  rows="5"
+               />
+            </div>
             <h2>Professional Summary</h2>
             <div className="input-section">
                <label htmlFor="summary">Career Summary</label>
@@ -143,20 +170,40 @@ export default function CVform() {
                   rows="5"
                />
             </div>
+         
          </form>
 
          {/*Preview Section */}
          <div className="cv-preview">
-         <h2>CV Preview</h2>
+         <h2>{formData.firstName} {formData.lastName}</h2>
+         <h3>{formData.jobPosition}</h3>
          <div className="preview-content">
-            <h3>{formData.firstName} {formData.lastName}</h3>
-            <p><strong>Position:</strong> {formData.jobPosition}</p>
-            <p><strong>Email:</strong> {formData.email}</p>
-            <p><strong>Phone:</strong> {formData.phoneNumber}</p>
-            <p><strong>Address:</strong> {formData.address}</p>
-            <p><strong>Languages:</strong> {formData.languages.join(', ')}</p>
-            <p><strong>Skills:</strong> {formData.skills.join(', ')}</p>
+            <div className="cv-info-section">
+
+               <p><strong>Email:</strong> {formData.email}</p>
+               <p><strong>Phone:</strong> {formData.phoneNumber}</p>
+               <p><strong>Address:</strong> {formData.address}</p>
+            </div>
+            
+            <div className="cv-info-section">
+               <p><strong>Languages:</strong> {formData.languages.join(', ')}</p>
+            </div>
+
+            <div className="cv-info-section">
+               <p><strong>Skills:</strong> {formData.skills.join(', ')}</p>
+            </div>
+            
+            <div className="cv-info-section">
+            <p><strong>Education:</strong> {formData.education}</p>
+            </div>
+
+            <div className="cv-info-section">
+            <p><strong>Experience:</strong> {formData.experience}</p>
+            </div>
+
+            <div className="cv-info-section">
             <p><strong>Summary:</strong> {formData.summary}</p>
+            </div>
          </div>
         </div>
 
