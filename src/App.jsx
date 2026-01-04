@@ -10,7 +10,7 @@ function App() {
 
   return (
      <>
-      <h1>CV Application</h1>
+      <h1>Curriculum Maker</h1>
       <div id='main-content'>
          <div id="editing-section">
             <div id="buttons">

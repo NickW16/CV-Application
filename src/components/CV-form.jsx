@@ -8,8 +8,8 @@ export default function CVform() {
          email: 'alex.chen@devportfolio.com',
          phoneNumber: '+1 (234) 567-8910',
          address: 'San Francisco, CA 12345',
-         languages: ['English', 'Mandarin', 'Spanish'],
-         skills: ['React', 'TypeScript', 'Node.js', 'Python', 'AWS', 'Docker', 'GraphQL'],
+         languages: 'English, Mandarin, Spanish',
+         skills: 'React, TypeScript, Node.js, Python, AWS, Docker, GraphQL',
          education: 'Harvard University.',
          experience: 'Worked at Tech Innovations Inc. leading a team of 8 developers in building scalable apps.',
          summary: 'Full-stack developer specialized in React apps.',
@@ -25,6 +25,7 @@ export default function CVform() {
       }));
    }
 
+   // this was too buggy to use
    // for when array changes:
    const handleArrayChange = (e,field) => {
       const {value} = e.target;
@@ -38,7 +39,7 @@ export default function CVform() {
    return (
       <div className="cv-app">
          <form className="cv-form">
-            <h2>General Info</h2>
+            <h2>My Information</h2>
             
             <div className="form-group">
               
@@ -115,8 +116,8 @@ export default function CVform() {
                   type="text"
                   className="form-input"
                   name="languages"
-                  value={formData.languages.join(',')}
-                  onChange={(e) => handleArrayChange(e, 'languages')}
+                  value={formData.languages}
+                  onChange={handleChange} //for updating live
                />
             <small className="input-hint">Separate languages with commas</small>
             </div>
@@ -128,15 +129,15 @@ export default function CVform() {
                   type="text"
                   className="form-input"
                   name="skills"
-                  value={formData.skills.join(',')}
-                  onChange={(e) => handleArrayChange(e, 'skills')}
+                  value={formData.skills}
+                  onChange={handleChange} //for updating live
                />
             <small className="input-hint">Separate skills with commas</small>
             </div>
 
             <h2>Education</h2>
             <div className="input-section">
-               <label htmlFor="education"></label>
+               <label htmlFor="education">Where did you study?</label>
                <textarea
                   type="text"
                   className="form-input"
@@ -148,13 +149,13 @@ export default function CVform() {
             </div>
             <h2>Experience</h2>
             <div className="input-section">
-               <label htmlFor="experience">Experience</label>
+               <label htmlFor="experience">Where did you work?</label>
                <textarea
                   type="text"
                   className="form-input"
                   name="experience"
                   value={formData.experience}   
-                  onChange={(e) => handleArrayChange(e, 'experience')}
+                  onChange={handleChange}
                   rows="5"
                />
             </div>
@@ -166,7 +167,7 @@ export default function CVform() {
                   className="form-input"
                   name="summary"
                   value={formData.summary}   
-                  onChange={(e) => handleArrayChange(e, 'summary')}
+                  onChange={handleChange}
                   rows="5"
                />
             </div>
@@ -179,30 +180,47 @@ export default function CVform() {
          <h3>{formData.jobPosition}</h3>
          <div className="preview-content">
             <div className="cv-info-section">
-
-               <p><strong>Email:</strong> {formData.email}</p>
-               <p><strong>Phone:</strong> {formData.phoneNumber}</p>
-               <p><strong>Address:</strong> {formData.address}</p>
+               <h3>Contact</h3>
+               <div className="info-content">
+                  <p><strong>Email:</strong> {formData.email}</p>
+                  <p><strong>Phone:</strong> {formData.phoneNumber}</p>
+                  <p><strong>Address:</strong> {formData.address}</p>
+               </div>
             </div>
             
             <div className="cv-info-section">
-               <p><strong>Languages:</strong> {formData.languages.join(', ')}</p>
+               <h3>Languages</h3>
+               <div className="info-content">
+                  <p>{formData.languages}</p>
+               </div>
             </div>
 
             <div className="cv-info-section">
-               <p><strong>Skills:</strong> {formData.skills.join(', ')}</p>
+               <h3>Skills</h3>
+                  <div className="info-content">
+                  <p>{formData.skills}</p>
+               </div>
             </div>
             
             <div className="cv-info-section">
-            <p><strong>Education:</strong> {formData.education}</p>
+               <h3>Education</h3>
+               <div className="info-content">
+                  <p>{formData.education}</p>
+               </div>
             </div>
 
             <div className="cv-info-section">
-            <p><strong>Experience:</strong> {formData.experience}</p>
+               <h3>Experience</h3>
+               <div className="info-content">
+                  <p>{formData.experience}</p>
+               </div>
             </div>
 
             <div className="cv-info-section">
-            <p><strong>Summary:</strong> {formData.summary}</p>
+               <h3>Summary</h3>
+               <div className="info-content">
+                  <p>{formData.summary}</p>
+               </div>
             </div>
          </div>
         </div>
