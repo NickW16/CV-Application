@@ -1,5 +1,5 @@
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Inter', sans-serif;  
   font-size: 18px;
   line-height: 1.5;
   font-weight: 400;
@@ -38,6 +38,7 @@ body {
 
 h1 {
   font-size: 3.2em;
+  margin: 10px;
   line-height: 1.1;
 }
 
@@ -79,7 +80,7 @@ button:focus-visible {
 
 /* start edits*/
 
-#title-and-icon {
+#github-credits {
    display: flex;
    justify-content: center;
    align-items: center;
@@ -87,7 +88,7 @@ button:focus-visible {
 }
 
 .github-icon {
-   height: 3.2em;
+   height: 20px;
 }
 
 .github-icon:hover {
@@ -179,3 +180,23 @@ label {
     overflow-wrap: break-word.
 }
 
+@media (max-width: 1000px) {
+   body {
+      width: 100%;
+   }
+   .cv-app {
+      flex-direction: column; 
+      align-items: center; 
+   }
+
+   .cv-form {
+      height: auto;
+      width: 80%;
+      margin: 1rem; /* reduce margin on mobile */
+   }
+
+   .cv-preview {
+      height: auto;
+      width: 80%;
+   }
+}

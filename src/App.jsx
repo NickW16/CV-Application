@@ -11,8 +11,9 @@ function App() {
 
   return (
      <>
-     <div id="title-and-icon">
-         <h1>Curriculum Maker</h1>
+     <h1>Curriculum Maker</h1>
+     <div id="github-credits">
+         made by NickW16
          <a href="https://github.com/NickW16/CV-Application" target="_blank">
             <img src={githubIcon} className="github-icon"  alt="github" />
             </a>
