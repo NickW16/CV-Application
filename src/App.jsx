@@ -13,7 +13,9 @@ function App() {
      <>
      <div id="title-and-icon">
          <h1>Curriculum Maker</h1>
-         <img src={githubIcon} className="github-icon"  alt="github" />
+         <a href="https://github.com/NickW16/CV-Application" target="_blank">
+            <img src={githubIcon} className="github-icon"  alt="github" />
+            </a>
       </div>
       <div id='main-content'>
          <div id="editing-section">
