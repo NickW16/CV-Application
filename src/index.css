@@ -29,6 +29,7 @@ a:hover {
 body {
   justify-self: center;
   align-self: center;
+  background-color: #4D838E;
   margin: 0;
   width: 80%;
   min-width: 320px;
@@ -78,6 +79,17 @@ button:focus-visible {
 
 /* start edits*/
 
+#title-and-icon {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 10px;
+}
+
+.github-icon {
+   height: 3.2em;
+}
+
 #main-content {
    display:flex;
    flex-direction: column;
@@ -91,7 +103,7 @@ button:focus-visible {
 
 .cv-form {
    width: 35%;
-   height: 520px;
+   height: 600px;
    color: black;
    overflow: auto; 
    background: linear-gradient(145deg, #ffffff, #f8fafc) ;
@@ -99,9 +111,6 @@ button:focus-visible {
    margin: 2rem;
    border-radius: 16px;
    border: 1px solid rgba(229, 231, 235, 0.8);
-
-   /* scroll styling */
-   scrollbar-width: 40px;
 }
 
 .cv-app {
@@ -135,7 +144,9 @@ label {
    width: 50%;
    height: 100%;
    color: black;
-   background: linear-gradient(145deg, #ffffff, #f8fafc); padding: 2.5rem; margin: 2rem;
+   background: linear-gradient(145deg, #ffffff, #f8fafc); 
+   padding: 2.5rem; 
+   margin: 2rem;
    border-radius: 16px;
    border: 1px solid rgba(229, 231, 235, 0.8);
 }
@@ -158,6 +169,6 @@ label {
 .info-content {
     border-top: 2px solid black;
     word-wrap: break-word;
-    overflow-wrap: break-word;
+    overflow-wrap: break-word.
 }
 
