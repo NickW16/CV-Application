@@ -90,6 +90,13 @@ button:focus-visible {
    height: 3.2em;
 }
 
+.github-icon:hover {
+    filter: invert(100%);
+    transition: 0.2s;
+    animation: grow-more 1000ms ease-out;
+    animation-fill-mode: forwards;
+}
+
 #main-content {
    display:flex;
    flex-direction: column;
